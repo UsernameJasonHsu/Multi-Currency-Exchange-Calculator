@@ -1,0 +1,106 @@
+/* Reset & 基本設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #f9f9f9;
+    color: #111;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+  
+  /* Header */
+  header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #000;
+  }
+  
+  /* 匯率資訊區 */
+  .rate-container {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    width: 320px;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #444;
+    user-select: none;
+  }
+  
+  /* 換算區 */
+  .converter {
+    background: white;
+    padding: 2rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.08);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* 輸入框 */
+  input[type="number"] {
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="number"]:focus {
+    border-color: #0071e3;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 113, 227, 0.3);
+  }
+  
+  /* 下拉選單 */
+  select {
+    font-size: 1.25rem;
+    padding: 0.7rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    background: white;
+  }
+  
+  select:focus {
+    border-color: #0071e3;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 113, 227, 0.3);
+  }
+  
+  /* 換算結果 */
+  .result {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0071e3;
+    text-align: center;
+    min-height: 40px;
+    user-select: none;
+  }
+  
+  /* 手機響應 */
+  @media (max-width: 400px) {
+    .rate-container,
+    .converter {
+      width: 100%;
+    }
+  }
