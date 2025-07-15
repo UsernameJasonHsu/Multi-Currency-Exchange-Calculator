@@ -1,5 +1,7 @@
 let currentRates = {};
 
+let initializedSelect = false; // 🌟 新增旗標
+
 async function fetchRates() {
   const res = await fetch('/api/rate');
   const data = await res.json();
@@ -13,14 +15,17 @@ async function fetchRates() {
   }
   infoDiv.innerHTML = html;
 
-  // 動態產生下拉選單選項
-  const select = document.getElementById('currency-select');
-  select.innerHTML = '';
-  for (const currency of Object.keys(currentRates)) {
-    const option = document.createElement('option');
-    option.value = currency;
-    option.textContent = currency;
-    select.appendChild(option);
+  // 🌟 只在第一次初始化選單
+  if (!initializedSelect) {
+    const select = document.getElementById('currency-select');
+    select.innerHTML = '';
+    for (const currency of Object.keys(currentRates)) {
+      const option = document.createElement('option');
+      option.value = currency;
+      option.textContent = currency;
+      select.appendChild(option);
+    }
+    initializedSelect = true; // 標記已初始化
   }
 }
 
@@ -45,3 +50,8 @@ document.getElementById('twd-input').addEventListener('input', updateConversion)
 document.getElementById('currency-select').addEventListener('change', updateConversion);
 
 fetchRates();
+
+setInterval(async function() {
+  await fetchRates();
+  updateConversion();
+}, 10000);

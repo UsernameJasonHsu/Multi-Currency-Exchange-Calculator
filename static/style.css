@@ -35,7 +35,9 @@
     background: white;
     padding: 1rem 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    box-shadow:
+        0 4px 6px rgba(0,0,0,0.1),
+        0 10px 20px rgba(0,0,0,0.12);
     width: 320px;
     margin-bottom: 2rem;
     font-size: 1rem;
@@ -48,7 +50,9 @@
     background: white;
     padding: 2rem 2rem;
     border-radius: 16px;
-    box-shadow: 0 6px 20px rgb(0 0 0 / 0.08);
+    box-shadow: 
+        0 6px 10px rgba(0,0,0,0.15),
+        0 15px 30px rgba(0,0,0,0.2);
     width: 320px;
     display: flex;
     flex-direction: column;
